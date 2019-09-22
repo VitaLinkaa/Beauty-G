@@ -1,0 +1,909 @@
+
+// font-family: 'Raleway', sans-serif
+// font-family: 'Fira Sans', sans-serif
+
+
+$family: 'Raleway', sans-serif
+$top-font: 14px
+$accent: #fe777d
+$pink: #fecdc7
+$green: #c8cba5
+$blue: #81ada0
+$dark: #19153e
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body 
+  font-size: 16px
+  font-family: $family
+  position: relative
+  line-height: 1.65
+  min-width: 320px
+  
+  section, header
+    position: relative
+    background-size: cover
+    background-position: center
+
+  section 
+    background-color: #fff
+    
+  .img-responsive
+    display: block
+    max-width: 100%
+    height: auto
+
+  .my-header
+    position: relative
+
+  .header 
+    min-height: 700px
+    height: 100vh
+
+    .top-line
+      padding-top: 40px
+      z-index: 1
+      margin-left: 45px
+      margin-right: 80px
+      display: flex
+      justify-content: space-between
+
+      .phone
+        a
+          font-size: 18px
+          color: #fff
+          white-space: nowrap
+          .fas
+            color: #555555
+            margin-right: 3px
+            font-size: 22px
+
+  .hamburger
+    position: absolute
+    top: 22px
+    right: -8px
+    z-index: 99
+
+  .header__center
+    margin-top: 40px
+    position: relative
+    color: #fff
+    text-align: center
+
+    .header__under 
+      p
+        margin-bottom: 0
+        margin-right: 10px
+        margin-left: 10px
+    
+      font-size: 14px
+      font-family: $family
+      text-align: center
+      text-transform: uppercase
+      position: relative
+      display: flex
+      align-items: center
+      white-space: nowrap
+      &::after,
+      &::before
+        display: inline-block
+        content: ''
+        position: relative
+        width: 100%
+        height: 1px
+        top: 50%
+        background-color: #fff
+
+    .header__title
+      h1 
+        text-transform: uppercase
+        font-family: 'Fira Sans', sans-serif
+        font-weight: 100
+        margin-top: 20px
+        font-size: 80px
+        border-bottom: 1px solid #fff
+        padding-bottom: 20px
+        white-space: nowrap
+
+    .header__city
+      text-transform: uppercase
+      font-size: 17px
+      margin: 20px 0
+      .fa
+        font-size: 12px
+        margin: -15px 10px
+        color: #555
+
+    .header__text
+      margin-bottom: 20px
+     
+    a.header__button 
+      text-transform: uppercase
+      text-decoration: none
+      border: none
+      color: #fff
+      background-color: $accent
+      padding: 15px 45px
+      border-radius: 2px
+      position: relative
+      font-weight: 600
+      font-size: 13px
+      transition: background-color .2 ease
+      outline: none
+      letter-spacing: 1.2px
+      &::after
+        position: absolute
+        content: ''
+        height: 4px
+        width: 100%
+        bottom: 0
+        left: 0
+        background-color: darken($accent, 5%) 
+        opasity: .2
+        border-bottom-right-radius: 2px
+        border-bottom-left-radius: 2px
+      &:focus, &:hover
+        text-decoration: none
+        color: #ffffff
+      &:hover
+        background-color: darken($accent, 5%) 
+        &::after
+          opacity: .3
+
+
+
+
+
+
+
+
+
+          
+
+  .header__social   
+      position: absolute
+      display: flex
+      color: white
+      right: 0
+      top: 0
+      height: 100%
+      border-left: 1px solid #555
+      align-items: center
+      padding: 0 12px
+      i 
+        font-family: fontawesome
+        color: #fff
+        font-size: 17px
+        background-color: rgba(#fff, .2)
+        height: 38px
+        width: 38px
+        border-radius: 100%
+        text-align: center
+        line-height: 38px
+        margin: 8px 0
+        transition: background-color .3 ease
+        &:hover
+          background-color: rgba(#fff, .4)
+
+      ul, li 
+        margin: 0
+        padding: 0
+        list-style: none
+
+  .header__bottom 
+    color: white
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    width: 100%
+    padding: 10px 0
+    border-top: 1px solid #555
+    background-color: rgba(#151515, .15) 
+
+.hamburger-inner, .hamburger-inner::after, .hamburger-inner::before
+      background-color: #fff
+      border-radius: none
+      width: 30px
+      cursor: pointer
+      z-index: 200
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before
+  background-color: #fff
+  cursor: pointer
+  
+.mm-listitem
+  a 
+    font-size: 15px
+    transition: color .25s ease
+    font-family: $family
+
+    &:hover
+      color: $accent
+
+    &::before
+      content: '\f141'
+      font-family: fontawesome
+      margin-right: 10px
+      font-size: 12px
+      color: $accent
+
+.mm-navbar 
+  border: none
+  margin-left: 20px
+      
+.mm-navbar__title
+  img
+    width: 100px
+    margin: 50px 0 20px
+
+html 
+  .mm-opened
+  overflow-y: scroll
+
+.mm-panels 
+  .mm-panel.mm-hasnavbar
+    margin-right: -18px
+
+.mm-listitem:after
+  display: none
+
+
+// section servises
+
+$colors: $pink, $green, $blue
+@for $i from 1 through length($colors)
+
+  .servises-carousel .owl-item:nth-child(#{length($colors)}n+#{$i})
+    background-color: nth($colors, $i)
+
+.servises
+  background-color: $dark 
+  &__carousel-item
+    color: #fff
+    font-size: 19px
+    font-weight: 300
+    position: relative
+    display: flex
+    flex-direction: column-reverse
+    &:hover
+      .servises__carousel-item-img
+        opacity: .5
+        cursor: pointer
+  .owl-item
+    &:nth-child(2n+2)
+      .servises__carousel-item
+        flex-direction: column
+    
+.servises__carousel-item-text
+  // border: 10px solid red
+  text-align: center
+  position: relative
+  width: 100%
+  padding: 20px 10% 50px 
+
+  .carousel__logo 
+    img
+      width: 120px
+      margin: 10px auto
+      padding: 5px
+      border: 1px solid #fff
+  .carousel__title
+    text-transform: uppercase
+    font-size: 30px
+    line-height: 30px
+    font-weight: 400
+    color: #fff
+    font-family: 'Fira Sans', sans-serif
+    padding: 20px 0
+    span
+      text-transform: none
+      font-weight: 100
+
+  .carousel__list
+    list-style: none
+    margin-bottom: 25px
+    li
+      padding: 10px
+      border-bottom: 1px solid rgba(#000, .12)
+      &:last-child
+        border-bottom: none
+
+  a.carousel__btn
+    text-transform: uppercase
+    text-decoration: none
+    border: none
+    color: #444
+    background-color: #fff
+    padding: 15px 45px
+    border-radius: 2px
+    position: relative
+    font-weight: 600
+    font-size: 13px
+    transition: background-color .2 ease
+    outline: none
+    letter-spacing: 1.2px
+    &:focus, &:hover
+        text-decoration: none
+        color: #4a4a4a
+        cursor: pointer
+      &:hover
+        background-color: lighten($accent, 5%) 
+        &::after
+          opacity: .3
+
+.servises__carousel-item-text .carousel__list li strong
+  color: #4a4a4a
+  .fas
+    font-size: 14px
+
+
+
+.servises__carousel-item-img
+    background-size: cover
+    background-position: center
+    opacity: .9
+    transition: opacity .5s ease
+    height: 506px
+
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled 
+    display: block
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev
+  width: 60px
+  height: 60px
+  color: #fff
+  background-color: $accent
+  border: 1px solid rgba($accent, .2)
+  outline: none
+  position: absolute
+  top: 46%
+  .fa
+    font-size: 18px
+
+
+.owl-carousel .owl-nav button.owl-next
+  left: -5px
+
+.owl-carousel .owl-nav button.owl-prev
+  right: -5px
+
+.gallery
+  margin-top: -10px
+  padding: 10% 0
+  color: #fff
+  
+  &__title
+    font-size: 30px
+    line-height: 40px
+    font-weight: 900
+    text-transform: uppercase
+    margin-bottom: 30px
+    span
+      color: $accent
+
+  &__text
+    p
+      margin: 10px 0
+
+.fotorama
+  background-color: rgba(#3d3c3c, .4)
+  .fotorama__nav
+    &-wrap
+      position: absolute
+      bottom: 10px
+      padding: 0 30px
+      width: 100%
+  &__thumb
+    border: 3px solid #fff
+    transition: border-color .5s ease
+    &-border
+      border-color: $accent
+  &__active
+    .fotorama__thumb
+      border-color: $accent
+
+  &__arr-
+    &-next, &-prev
+      &::before
+        font-family: fontawesome
+        font-size: 30px
+
+
+    &-next   
+      &::before
+        content: '\f105'
+
+    &-prev   
+      &::before
+        content: '\f104'
+        margin-left: 20px
+
+.gallery__overlay
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #3d3c3c
+    opacity: .9
+
+
+.call 
+  padding: 10% 0
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  color: #ffffff
+  &__inverse
+    &::before
+      content: ''
+      right: 0
+      top: 0
+      height: 100%
+      position: absolute
+      background-color: rgba($accent, .9)
+      width: 50%
+
+.form__callback    
+  position: relative
+  .success
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 30px
+    // display: flex
+    z-index: 10
+    span
+      margin: auto
+    & ~ *
+      transition: all .5s ease
+    &.active
+      & ~ *
+        opasity: .5
+        filter: blur(10px)
+
+
+.form__title-box
+  .form__title-img
+    text-align: center
+  .form__title-text
+    text-align: center
+
+  .form__title-h
+    text-transform: uppercase
+    margin-top: 20px
+    text-align: center
+    font-weight: 900
+    font-size: 30px
+
+input
+  width: 100%
+  background-color: transparent
+  border: rgba(#000, .1) 1px solid 
+  border-bottom: rgba(#000, .1) 2px solid 
+  margin-top: 20px
+  border-radius: 2px
+  padding: 8px 20px
+  outline: none
+  display: inline-block
+  color: #fff
+  &::-webkit-input-placeholder
+    color: #fff
+    opacity: 1
+
+select
+  width: 100%
+  background-color: transparent
+  border: rgba(#000, .1) 1px solid 
+  border-bottom: rgba(#000, .1) 2px solid 
+  margin-top: 20px
+  border-radius: 2px
+  padding: 8px 20px
+  outline: none
+  display: inline-block
+  color: #fff
+  &::-webkit-input-placeholder
+    color: #fff
+    opacity: 1
+  option
+    color: #333
+
+
+.form__btn
+  cursor: pointer
+  margin: 140px auto 0
+  display: block
+  text-transform: uppercase
+  text-decoration: none
+  border: none
+  color: $accent
+  background-color: #fff 
+  padding: 15px 45px
+  border-radius: 2px
+  position: relative
+  font-weight: 600
+  font-size: 13px
+  transition: background-color .2 ease
+  outline: none
+  letter-spacing: 1.2px
+  &:focus, &:hover
+    text-decoration: none
+    color: #ffffff
+  &:hover
+    background-color: darken($accent, 5%) 
+    &::after
+      opacity: .3
+
+
+.review
+  padding: 10% 0
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  position: relative
+
+.review__title
+  color: #fff
+  text-align: center
+  font-weight: 900
+  font-size: 30px
+  line-height: 40px
+  span
+    color: $accent
+
+
+
+.reviews.owl-carousel .owl-nav button.owl-prev,
+.reviews.owl-carousel .owl-nav button.owl-next
+  display: none
+
+.reviews.owl-carousel button.owl-dot
+  background-color: #fff
+  width: 8px
+  height: 8px
+  border-radius: 100%
+  margin-right: 7px
+  margin-top: 50px
+  transition: background-color .5s ease, transform .5s ease
+  outline: none
+  
+.reviews.owl-carousel button.owl-dot.active
+  background-color: $accent
+  transform: scale(1.3)
+
+.quotes
+  position: absolute
+  width: 100%
+  &::after, &::before
+    content: ',,'
+    position: absolute
+    color: $accent
+    font-size: 56px
+    font-family: "Times New Roman", serif
+    font-weight: 700
+    line-height: 0
+    transform: rotate(180deg)
+    display: block
+    top: 220px
+  &::before
+    left: 50px
+
+  &::after
+    top: 184px
+    right: 50px
+    transform: rotate(0)
+
+.reviews 
+  padding-top: 50px
+  text-align: center
+  color: #fff
+  .review-item
+    
+    .review__title
+      font-size: 20px
+      font-weight: 400
+      
+    .review__date
+      margin-top: 15px
+      font-size: 16px
+      font-style: italic
+    .review__stars
+      .fa
+        color: $accent
+        margin: 15px 0 40px
+        font-size: 14px
+    
+.review__body
+      margin-top: 40px
+      max-width: 700px
+      margin: auto
+      color: #fff
+
+
+.parners
+  padding: 10% 0
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #fff
+    opacity: .3
+
+  &__title
+    color: #fff
+    text-align: center
+    font-weight: 900
+    font-size: 30px
+    line-height: 40px
+    padding-bottom: 50px
+    span
+      color: $accent
+
+.parners.owl-carousel .partners
+  border: 10px solid red
+
+.partners
+  display: flex
+  position: relative
+  .owl-stage
+    display: flex
+    margin: 0 auto
+    .owl-item
+      display: flex
+      align-items: center
+      margin: 0 auto
+      img
+        max-width: 100%
+        width: 100%
+        margin: 0 auto
+
+.partners.owl-carousel .owl-nav button.owl-next
+  transition: opacity .5s ease
+  padding: 10px
+  left: -70px
+  background-color: transparent
+  border: none
+  color: $accent
+  &:hover
+    opacity: .6
+  .fa
+    font-size: 40px
+.partners.owl-carousel .owl-nav button.owl-prev
+  background-color: transparent
+  border: none
+  right: -60px
+  color: $accent
+  transition: opacity .5s ease
+  padding: 10px
+  &:hover
+    opacity: .6
+
+  .fa
+    font-size: 40px
+
+
+.footer
+  padding: 5% 0
+  background-color: #3a3a3a
+  color: #fff
+  font-size: 14px
+  position: relative
+  &__column
+    margin: 15px 0
+    p
+      margin: 20px 0
+
+
+
+.footer__social   
+  color: white
+  margin-top: 30px
+  li
+    display: inline-block
+    transition: color .5s ease, background-color .3 ease
+    a
+      color: #ababab
+      transition: color .5s ease, background-color .3 ease
+      &:hover
+        color: rgba(#fff, .8)
+  i 
+    font-family: fontawesome
+    color: #fff
+    font-size: 14px
+    background-color: rgba(#fff, .2)
+    height: 38px
+    width: 38px
+    border-radius: 100%
+    text-align: center
+    line-height: 38px
+    margin: 8px 0
+    transition: background-color .3s ease
+    &:hover
+      background-color: rgba(#fff, .4)
+
+  ul, li 
+    margin: 0
+    padding: 0
+    list-style: none
+
+
+
+.footer__menu
+  ul, li 
+    margin: 0
+    padding: 0
+    list-style: none
+    a
+      color: #979797
+      transition: color .25s ease
+      display: inline-block
+      padding: 4px 0
+      text-decoration: underline
+      padding-left: 20px
+      position: relative
+      &:hover,
+      &:focus
+        color: $accent
+      &::before
+        content: '\f141'
+        font-family: fontawesome
+        position: absolute
+        left: 0
+  li.active
+    color: $accent
+
+.footer__third
+  color: #fff
+  margin-top: 15px
+  span
+    font-size: 20px
+    color: $accent
+
+.footer__map
+  max-height: 200px
+  opasity: .7
+  transition: opasity .3s ease
+  &:hover
+    opasity: .9
+
+
+// $family: 'Raleway', sans-serif
+// $top-font: 14px
+// $accent: #fe777d
+// $pink: #fecdc7
+// $green: #c8cba5
+// $blue: #81ada0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+  header
+    .header__center
+      .header__title
+          h1 
+            font-size: 70px
+    .header__bottom
+      font-size: 14px
+
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+  header
+    .header__center
+      .header__title
+          h1 
+            font-size: 55px
+
+  .gallery
+    &__text
+      p
+      margin: 40px 0
+
+  .review
+    .quotes
+      display: none
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  header
+    .header__center
+      .header__title
+        h1 
+          font-size: 40px
+      .header__under 
+        font-size: 10px
+  .call 
+    &__inverse
+      &::before
+        width: 100%
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  header
+    .header__center
+      width: 400px
+      .header__city
+        font-size: 13px
+        margin: 12px 0
+      .header__text
+        font-size: 13px
+      .header__title
+          h1 
+            font-size: 53px
+      .header__under 
+        font-size: 12px
+        .header__text
+          font-size: 10px
+    .header__bottom
+      text-align: center
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+  header
+    .top-line
+      display: block
+      a
+        img
+          width: 80px  
+          margin-left: 50px
+          text-align: center    
+      .phone
+        a
+          display: none
+
+    .header__center
+      width: 200px
+      .header__city
+        font-size: 10px
+        margin: 12px 0
+      .header__text
+        font-size: 10px
+      .header__title
+          h1 
+            font-size: 23px
+      .header__under 
+        font-size: 7px
+        text-transform: none
+    .header__bottom
+      text-align: center
+      font-size: 10px
