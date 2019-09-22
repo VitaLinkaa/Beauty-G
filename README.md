@@ -1,2 +1,2 @@
 # BeautyG
-[# Beauty&G]()
+[# Beauty&G](https://vitalinkaa.github.io/BeautyG/)
